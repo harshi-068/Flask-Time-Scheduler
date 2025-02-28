@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Scheduler</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Left: Image -->
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='schedule.jpg') }}" alt="Time Scheduler">
+        </div>
+
+        <!-- Right: Form -->
+        <div class="form-container">
+            <h2>Schedule Your Task</h2>
+            <form method="POST">
+                <label for="day">Select Date</label>
+                <div class="date-selection">
+                    
+                    <select name="day" id="day"></select>
+                    <select name="month" id="month"></select>
+                    <select name="year" id="year"></select>
+                </div>
+
+                <label for="time">Select Time:</label>
+                <input type="time" name="time" id="time" required>
+                <br>
+
+                <label for="subject"> Subject:</label>
+                <input type="text" name="subject" id="subject" placeholder="Enter Subject" required>
+
+                <button type="submit">Schedule</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
